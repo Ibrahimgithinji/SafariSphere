@@ -30,10 +30,10 @@ const Footer = () => {
           <div className="footer-section">
             <h3>Follow Us</h3>
             <ul>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">LinkedIn</a></li>
+              <li><button type="button" aria-label="Follow us on Facebook">Facebook</button></li>
+              <li><button type="button" aria-label="Follow us on Twitter">Twitter</button></li>
+              <li><button type="button" aria-label="Follow us on Instagram">Instagram</button></li>
+              <li><button type="button" aria-label="Follow us on LinkedIn">LinkedIn</button></li>
             </ul>
           </div>
         </div>
