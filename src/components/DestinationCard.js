@@ -1,21 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../css/components.css';
 
-const DestinationCard = ({ destination }) => {
+const DestinationCard = ({ destination, index }) => {
+  if (!destination || !destination.id || !destination.name || !destination.description) {
+    return null;
+  }
+
   return (
-    <div className="card">
+    <article className="card" tabIndex="0" aria-labelledby={`destination-title-${destination.id}`}>
       <img
-  src={destination.image || "/images/Maasai mara.jpg"}
-        alt={destination.name || "Destination Image"}
-  onError={(e) => (e.target.src = "/images/Maasai mara.jpg")}
+        src={destination.image || "/images/Maasai mara.jpg"}
+        alt={`${destination.name} - SafariSphere Tours destination`}
+        loading="lazy"
+        onError={(e) => (e.target.src = "/images/Maasai mara.jpg")}
       />
       <div className="card-content">
-        <h3>{destination.name}</h3>
+        <h3 id={`destination-title-${destination.id}`}>{destination.name}</h3>
         <p>{destination.description}</p>
-        <Link to="/tours" className="btn">View Tours</Link>
+        <Link to="/tours" className="btn">
+          Explore Tours
+        </Link>
       </div>
-    </div>
+    </article>
   );
 };
 
